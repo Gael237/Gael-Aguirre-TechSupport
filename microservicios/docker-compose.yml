@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  servicio_a:
+    build: ./servicio_a
+    ports:
+      - "5000:5000"
+    environment:
+      - DB_HOST=bd-actividades.cf1xalzdamtz.us-east-1.rds.amazonaws.com
+      - DB_USER=admin
+      - DB_PASSWORD=12345678yt
+      - DB_NAME=soporte_db
+    depends_on:
+      - servicio_b
+
+  servicio_b:
+    build: ./servicio_b
