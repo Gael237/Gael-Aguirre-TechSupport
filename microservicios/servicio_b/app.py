@@ -5,9 +5,9 @@ app = Flask(__name__)
 
 @app.route("/procesar", methods=["POST"])
 def procesar():
-    print("Procesando tarea pesada...")
+    print("Procesando tarea pesada...", flush=True)
     time.sleep(5)  # simulación
-    print("Tarea terminada")
+    print("Tarea terminada", flush=True)
 
     return jsonify({"status": "procesado"})
 
